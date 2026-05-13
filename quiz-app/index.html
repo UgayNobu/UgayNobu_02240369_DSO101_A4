@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Games Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🎮 Mobile Games Quiz</h1>
+  <p>By UgayNobu | DSO101 A4</p>
+
+  <div class="question">1. What game says "Winner Winner Chicken Dinner"?</div>
+  <button onclick="check(this, true)">PUBG Mobile</button>
+  <button onclick="check(this, false)">Free Fire</button>
+  <button onclick="check(this, false)">COD Mobile</button>
+
+  <div class="question">2. In Clash of Clans, what trains troops?</div>
+  <button onclick="check(this, false)">Gold</button>
+  <button onclick="check(this, true)">Elixir</button>
+  <button onclick="check(this, false)">Gems</button>
+
+  <div class="question">3. Which game uses "Brawlers"?</div>
+  <button onclick="check(this, false)">Clash Royale</button>
+  <button onclick="check(this, true)">Brawl Stars</button>
+  <button onclick="check(this, false)">Boom Beach</button>
+
+  <div class="question">4. In Among Us, what are you finding?</div>
+  <button onclick="check(this, false)">The Monster</button>
+  <button onclick="check(this, true)">The Imposter</button>
+  <button onclick="check(this, false)">The Ghost</button>
+
+  <div class="question">5. Which game has you matching candies?</div>
+  <button onclick="check(this, false)">Angry Birds</button>
+  <button onclick="check(this, false)">Temple Run</button>
+  <button onclick="check(this, true)">Candy Crush</button>
+
+  <div id="score"></div>
+
+  <script>
+    let score = 0;
+    let answered = 0;
+
+    function check(btn, isCorrect) {
+      if (btn.disabled) return;
+      btn.classList.add(isCorrect ? 'correct' : 'wrong');
+      btn.disabled = true;
+      if (isCorrect) score++;
+      answered++;
+      if (answered === 5) {
+        document.getElementById('score').innerText = 'Score: ' + score + '/5 🎉';
+      }
+    }
+  </script>
+
+</body>
+</html>
